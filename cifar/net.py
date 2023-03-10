@@ -42,8 +42,10 @@ net = Net()
 
 if __name__ == '__main__':
     image, label = train_dataset_instance[0]
-    image = torch.unsqueeze(image, 0)
-    output = net(image)
-    print(f'Input shape: {image.shape}')
+    print(f'Image shape: {image.shape}')
+    x = torch.unsqueeze(image, 0)
+    print(f'Input shape: {x.shape} (unsqueezed)')
+
+    output = net(x)
     print(f'Output shape: {output.shape}')
     print(f'Output: {output}')
