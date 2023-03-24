@@ -1,5 +1,5 @@
 # Custom
-depth_estimation/nyu_data
+depth_estimation/data
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
