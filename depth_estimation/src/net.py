@@ -1,8 +1,7 @@
-import torch
 from torch import nn
 import torch.nn.functional as F
-from PIL import Image
-import numpy as np
+from torchvision.transforms.functional import to_pil_image
+from src.data import train_dataset_instance
 
 
 class ConvBlock(nn.Module):
@@ -43,10 +42,10 @@ class UpsampleBlock(nn.Module):
 class Encoder(nn.Module):
     def __init__(self):
         super().__init__()
-        self.conv1 = nn.Conv2d(3, 6, kernel_size=3, padding=1)
-        self.bn1 = nn.BatchNorm2d(6)
+        self.conv1 = nn.Conv2d(3, 8, kernel_size=3, padding=1)
+        self.bn1 = nn.BatchNorm2d(8)
 
-        self.conv2 = nn.Conv2d(6, 16, kernel_size=3, padding=1)
+        self.conv2 = nn.Conv2d(8, 16, kernel_size=3, padding=1)
         self.bn2 = nn.BatchNorm2d(16)
 
         self.conv_block_1 = ConvBlock(16, 16)
@@ -134,15 +133,19 @@ net = Net()
 
 
 def main():
-    input = Image.open(
-        "data/nyu2_train/basement_0001a_out/1.jpg").convert('RGB')
-    input = np.array(input).transpose((2, 0, 1)).astype(np.float32) / 255
-    input = torch.tensor(input).unsqueeze(0)
-    print(input)
-    output = net(input)
-    print(f'Output shape: {output.shape}')
-    print(f'Output: {output}')
+    x, _ = train_dataset_instance[0]
+    print(f'Input shape: {x.shape}')
+    x = x.unsqueeze(0)
+    print(f'Input shape unsqueezed: {x.shape}')
 
-    img_arr = output.detach().numpy()[0, 0, :, :]
-    img = Image.fromarray((img_arr * 255).astype(np.uint8))
-    img.save("output.png")
+    y = net(x)
+    print(f'Output shape: {y.shape}')
+    y = y.squeeze(0)
+    print(f'Output shape squeezed: {y.shape}')
+
+    img = to_pil_image(y, mode='L')
+    img.save("demos/net_output.png")
+
+
+if __name__ == '__main__':
+    main()

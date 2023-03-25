@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "src"}]
 
 [tool.poetry.scripts]
-dataloader = "dataloader"
+data = "src.data:main"
 net = "src.net:main"
 
 [tool.poetry.dependencies]
