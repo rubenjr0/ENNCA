@@ -23,3 +23,7 @@ List of [project requirements](project_requirements.md).
 ### Video Audio Emotion Recognition
 **Date:** 29/03/2023
 **Location:** `homework/video_audio_emotion_recognition`
+
+### Fuss-Free Network
+**Date:** 13/04/2023
+**Location:** `homework/ffn`
