@@ -1,0 +1,8 @@
+torch
+torchvision
+lightning
+torchmetrics
+pytorch-optimizer
+PIL
+numpy
+matplotlib
