@@ -31,7 +31,7 @@ def run_experiment(name, lr, apply_augs):
         root='',
         csv_train='data/nyu2_train.csv',
         csv_test='data/nyu2_test.csv',
-        batch_size=8,
+        batch_size=32,
         apply_augs=apply_augs
     )
 
