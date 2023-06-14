@@ -15,6 +15,9 @@ When augmenting the data, both the input image and the expected result must rece
 
 To achieve this we stack the input and the target tensors, apply the transform, and then split the resulting tensor.
 
+![](outputs/data_examples.png)
+> Data examples
+
 ## Architecture
 The architecture consists on a [`EfficientNet` encoder](src/efficientnet_wrapper.py) and 3 [`BiFPN` decoder blocks](src/decoder_block.py). The features from the encoder are extracted and passed through 3 different decoder blocks. In each decoder block we take the features of size `14x14` and `28x28`, we upscale them to a common size, and concatenate.
 
@@ -59,6 +62,7 @@ Higher values caused the weights to explode (even using gradient clipping).
 - **Test loss:** `0.015202163718640804`
 
 |[](outputs/mid_lr_without_augs.png)
+> [Link to the image](outputs/mid_lr_without_augs.png), if it doesn't load
 
 ## Conclussions and further improvements
 The learning rate of `2e-3` with augmentations gives the best result, and the same learning rate without augemntations gives the second better results.
