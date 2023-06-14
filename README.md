@@ -4,7 +4,7 @@ ENNCA course in the Faculty of Electronics and Information Technology, Warsaw Un
 ## Project - Depth Estimation
 Depth estimation using the [NYU Depth V2 dataset](https://www.kaggle.com/datasets/soumikrakshit/nyu-depth-v2).
 
-List of [project requirements](project_requirements.md).
+List of [project requirements](project_requirements.md) and [project report](depth_estimation/report.md).
 
 ## Homework
 
