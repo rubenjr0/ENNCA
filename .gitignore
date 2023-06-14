@@ -1,5 +1,6 @@
 # Custom
 depth_estimation/data
+depth_estimation/models
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
