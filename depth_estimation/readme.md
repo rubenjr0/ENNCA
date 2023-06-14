@@ -36,14 +36,14 @@ The models were trained on Kaggle using GPU, 16 bit precision, weight decay to r
 - **Test accuracy:** `0.7456409931182861`
 - **Test loss:** `0.01476159505546093`
 
-![](low_lr_with_auhs.png)
+![](outputs/low_lr_with_auhs.png)
 
 ### Medium learning rate (`2e-3`) with augmentations
 
 - **Test accuracy:** `0.7753664255142212`
 - **Test loss:** `0.0142685072`
 
-![](mid_lr_with_augs.png)
+![](outputs/mid_lr_with_augs.png)
 
 ### High learning rate (`8e-3`) with augmentations
 Higher values caused the weights to explode (even using gradient clipping).
@@ -51,14 +51,14 @@ Higher values caused the weights to explode (even using gradient clipping).
 - **Test accuracy:** `0.7525391578674316`
 - **Test loss:** `0.016138572245836258`
 
-![](high_lr_with_augs.png)
+![](outputs/high_lr_with_augs.png)
 
 ### Medium learning rate (`2e-3`) without augmentations
 
 - **Test accuracy:** `0.7676243185997009`
 - **Test loss:** `0.015202163718640804`
 
-|[](mid_lr_without_augs.png)
+|[](outputs/mid_lr_without_augs.png)
 
 ## Conclussions and further improvements
 The learning rate of `2e-3` with augmentations gives the best result, and the same learning rate without augemntations gives the second better results.
